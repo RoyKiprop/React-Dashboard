@@ -1,11 +1,11 @@
-import Sidebar from "./Components/SideBar"
+import SideBar from "./Components/SideBar"
 
 function App() {
 
 
   return (
     <>
-     <Sidebar/>
+     <SideBar/>
     </>
   )
 }
