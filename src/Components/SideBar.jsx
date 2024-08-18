@@ -58,17 +58,30 @@ function SideBar() {
         },
       }}
     >
-      <Box sx={{ display: "flex", flexDirection: "column", height: "100%", marginTop: "0.1rem"}}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100%",
+          marginTop: "0.1rem",
+        }}
+      >
         <Toolbar
           sx={{
             display: "flex",
             justifyContent: isOpen ? "space-between" : "center",
             alignItems: "center",
-            marginBottom: "0.7rem"
+            marginBottom: "0.7rem",
           }}
         >
           {isOpen && (
-            <Typography variant="body1" className="text-[#a7a5b8]">
+            <Typography
+              sx={{
+                fontFamily: "Montserrat",
+              }}
+              variant="body1"
+              className="text-[#a7a5b8]"
+            >
               ADMIN
             </Typography>
           )}
@@ -91,9 +104,7 @@ function SideBar() {
           }}
         >
           {menuItems.map((item, index) => (
-            <ListItemButton key={index}
-          
-            >
+            <ListItemButton key={index}>
               <ListItem disablePadding>
                 <ListItemIcon
                   sx={{
@@ -106,7 +117,7 @@ function SideBar() {
                 {isOpen && (
                   <ListItemText
                     primary={item.text}
-                    className="text-[#a7a5b8] font-bold  hover:text-green-500 focus:text-green-500"
+                    className="font-montserrat font-semibold text-[#a7a5b8] hover:text-green-500 focus:text-green-500"
                   />
                 )}
               </ListItem>

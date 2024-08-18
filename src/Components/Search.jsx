@@ -13,7 +13,7 @@ function Search({search, setSearchValue}) {
         <input
           value={search}
           type="text"
-          className="w-full h-12 pl-4 pr-8 py-2 bg-[#2a263d]   focus:outline-none focus:text-[#a7a5b8] hover:text-[#a7a5b8] focus:border-orangeCustom hover:border-orangeCustom"
+          className="w-full h-12 pl-4 pr-8 py-2 bg-[#2a263d] focus:outline-none focus:text-[#a7a5b8] hover:text-[#a7a5b8] "
           placeholder="Search here..."
           onChange={(e) => setSearchValue(e.target.value)}
         />

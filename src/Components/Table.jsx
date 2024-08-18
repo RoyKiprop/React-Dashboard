@@ -26,35 +26,38 @@ function Table() {
   };
 
   return (
-  
-      <table className= "bg-white rounded-2xl shadow-md my-10 ">
-        <thead className="bg-gray-200 sticky top-0">
-          <tr >
-            <th className=" border-b py-2 px-4">
+    <div className="dark:bg-[#2a263d] bg-[#fffff] p-8 rounded-2xl w-[1200px] h-[1300px]">
+      <div className="flex justify-end">
+        <Button>+ New Product</Button>
+      </div>
+      <table>
+        <thead className=" sticky top-0 text-white">
+          <tr>
+            <th className=" py-2 px-4">
               <Checkbox
                 checked={selectedProducts.length === products.length}
                 onChange={handleSelectAll}
               />
             </th>
             {columns.map((column) => (
-              <th key={column} className="border-b py-2 px-4 text-left">
+              <th key={column} className="py-2 px-4 text-left">
                 {column}
               </th>
             ))}
-          
           </tr>
         </thead>
         <tbody>
           {products.map((item) => (
-            <tr key={item.id} className="hover:bg-gray-100">
+            <tr key={item.id}>
               <td className=" py-2 px-4">
                 <Checkbox
+                  
                   checked={selectedProducts.includes(item.id)}
                   onChange={() => handleSelect(item.id)}
                 />
               </td>
               {columns.map((column) => (
-                <td key={`${item.id}-${column}`} className=" py-2 px-4">
+                <td key={`${item.id}-${column}`} className=" py-2 px-4 text-[#9490a7]">
                   {typeof item[column] === "object"
                     ? JSON.stringify(item[column])
                     : item[column]}
@@ -68,7 +71,7 @@ function Table() {
           ))}
         </tbody>
       </table>
-    
+    </div>
   );
 }
 
