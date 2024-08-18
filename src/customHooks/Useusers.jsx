@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 function UseUsers() {
   const columns = ["Id", "Name", "Email", "Phone", "Role"]
-   const[users, setUsers] = useState([])
+  const[users, setUsers] = useState([])
    
     useEffect(function (){
         async function fetchProducts(){

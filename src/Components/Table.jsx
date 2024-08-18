@@ -1,27 +1,28 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
-import UseProducts from "../customHooks/UseProducts";
+
 import Button from "./Button";
 import Checkbox from "./Checkbox";
 
-function Table() {
-  const [columns, products] = UseProducts();
-  const [selectedProducts, setSelectedProducts] = useState([]);
+function Table({columns, data}) {
+  // const [columns, data] = Usedata();
+  const [selectedData, setselectedData] = useState([]);
 
   const handleSelectAll = (e) => {
     if (e.target.checked) {
-      setSelectedProducts(products.map((product) => product.id));
+      setselectedData(data.map((product) => product.id));
     } else {
-      setSelectedProducts([]);
+      setselectedData([]);
     }
   };
 
   const handleSelect = (id) => {
-    if (selectedProducts.includes(id)) {
-      setSelectedProducts(
-        selectedProducts.filter((productId) => productId !== id)
+    if (selectedData.includes(id)) {
+      setselectedData(
+        selectedData.filter((productId) => productId !== id)
       );
     } else {
-      setSelectedProducts([...selectedProducts, id]);
+      setselectedData([...selectedData, id]);
     }
   };
 
@@ -35,7 +36,7 @@ function Table() {
           <tr>
             <th className=" py-2 px-4">
               <Checkbox
-                checked={selectedProducts.length === products.length}
+                checked={selectedData.length === data.length}
                 onChange={handleSelectAll}
               />
             </th>
@@ -47,12 +48,12 @@ function Table() {
           </tr>
         </thead>
         <tbody>
-          {products.map((item) => (
+          {data.map((item) => (
             <tr key={item.id}>
               <td className=" py-2 px-4">
                 <Checkbox
                   
-                  checked={selectedProducts.includes(item.id)}
+                  checked={selectedData.includes(item.id)}
                   onChange={() => handleSelect(item.id)}
                 />
               </td>
