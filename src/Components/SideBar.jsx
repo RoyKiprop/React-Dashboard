@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import {
   Drawer,
   List,
@@ -26,16 +27,16 @@ import {
 } from "@mui/icons-material";
 
 const menuItems = [
-  { icon: <Dashboard />, text: "Overview" },
-  { icon: <Group />, text: "Users" },
-  { icon: <Inventory />, text: "Products" },
-  { icon: <ShoppingCart />, text: "Orders" },
-  { icon: <CalendarMonth />, text: "Schedule" },
-  { icon: <StackedLineChart />, text: "Line Charts" },
-  { icon: <PieChart />, text: "Pie Charts" },
-  { icon: <BarChart />, text: "Bar Charts" },
-  { icon: <Map />, text: "Map" },
-  { icon: <Settings />, text: "Settings" },
+  { icon: <Dashboard />, text: "Overview", path: "/overview" },
+  { icon: <Group />, text: "Users", path: "/users" },
+  { icon: <Inventory />, text: "Products", path: "/products" },
+  { icon: <ShoppingCart />, text: "Orders", path: "/orders" },
+  { icon: <CalendarMonth />, text: "Schedule", path: "/schedule" },
+  { icon: <StackedLineChart />, text: "Line Charts", path: "/line-charts" },
+  { icon: <PieChart />, text: "Pie Charts", path: "/pie-charts" },
+  { icon: <BarChart />, text: "Bar Charts", path: "/bar-charts" },
+  { icon: <Map />, text: "Map", path: "/map" },
+  { icon: <Settings />, text: "Settings", path: "/settings" },
 ];
 
 function SideBar() {
@@ -104,24 +105,33 @@ function SideBar() {
           }}
         >
           {menuItems.map((item, index) => (
-            <ListItemButton key={index}>
-              <ListItem disablePadding>
-                <ListItemIcon
-                  sx={{
-                    color: "#a7a5b8",
-                  }}
-                  className="text-[#a7a5b8] hover:text-green-500 focus:text-green-500"
-                >
-                  {item.icon}
-                </ListItemIcon>
-                {isOpen && (
-                  <ListItemText
-                    primary={item.text}
-                    className="font-montserrat font-semibold text-[#a7a5b8] hover:text-green-500 focus:text-green-500"
-                  />
-                )}
-              </ListItem>
-            </ListItemButton>
+          <NavLink
+          key={index}
+          to={item.path}
+          style={({ isActive }) => ({
+            textDecoration: "none",
+            color: isActive ? "#22c55e" : "#a7a5b8",
+          })}
+        >
+          <ListItemButton>
+            <ListItem disablePadding>
+              <ListItemIcon
+                sx={{
+                  color: "#a7a5b8",
+                }}
+                className="text-[#a7a5b8] hover:text-green-500 focus:text-green-500"
+              >
+                {item.icon}
+              </ListItemIcon>
+              {isOpen && (
+                <ListItemText
+                  primary={item.text}
+                  className="font-montserrat font-semibold text-[#a7a5b8] hover:text-green-500 focus:text-green-500"
+                />
+              )}
+            </ListItem>
+          </ListItemButton>
+        </NavLink>
           ))}
         </List>
       </Box>
