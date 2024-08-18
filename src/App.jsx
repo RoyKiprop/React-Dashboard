@@ -1,7 +1,8 @@
 import Header from "./Components/Header"
 import SideBar from "./Components/SideBar"
+import OrdersPage from "./Pages/OrdersPage"
 
-import UsersPage from "./Pages/UsersPage"
+
 
 function App() {
 
@@ -11,7 +12,8 @@ function App() {
      <SideBar/>
      <div className="w-full">
       <Header/>
-      <UsersPage/>
+      <OrdersPage/>
+     
      </div>
     
     </div>
