@@ -9,7 +9,6 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  Avatar,
   Box,
 } from "@mui/material";
 import {
@@ -27,7 +26,7 @@ import {
 } from "@mui/icons-material";
 
 const menuItems = [
-  { icon: <Dashboard />, text: "Dashboard" },
+  { icon: <Dashboard />, text: "Overview" },
   { icon: <Group />, text: "Users" },
   { icon: <Inventory />, text: "Products" },
   { icon: <ShoppingCart />, text: "Orders" },
@@ -40,7 +39,7 @@ const menuItems = [
 ];
 
 function SideBar() {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(true);
 
   const handleToggle = () => setOpen(!isOpen);
 
@@ -54,54 +53,34 @@ function SideBar() {
         "& .MuiDrawer-paper": {
           width: isOpen ? 240 : 60,
           boxSizing: "border-box",
-          transition: "width 1s",
-          
+          transition: "width 0.2s",
+          background: "#2a263e",
         },
       }}
     >
-      <Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+      <Box sx={{ display: "flex", flexDirection: "column", height: "100%", marginTop: "0.1rem"}}>
         <Toolbar
           sx={{
             display: "flex",
             justifyContent: isOpen ? "space-between" : "center",
             alignItems: "center",
+            marginBottom: "0.7rem"
           }}
         >
-          {isOpen && <Typography variant="body1">ADMIN</Typography>}
+          {isOpen && (
+            <Typography variant="body1" className="text-[#a7a5b8]">
+              ADMIN
+            </Typography>
+          )}
           <IconButton onClick={handleToggle}>
-            <Menu />
+            <Menu
+              sx={{
+                color: "#a7a5b8",
+              }}
+              className=" hover:text-green-500 focus:text-green-500"
+            />
           </IconButton>
         </Toolbar>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: isOpen ? "flex-start" : "center",
-            marginLeft: isOpen ? "4rem" : "0",
-           
-          }}
-        >
-          <Avatar
-            alt="Profile Picture"
-            src="https://thispersondoesnotexist.com/"
-            sx={{
-              width: isOpen ? 70 : 30,
-              height: isOpen ? 70 : 30,
-            }}
-          />
-        </Box>
-        {isOpen && (
-          <Typography
-            variant="h6"
-            sx={{
-              fontSize: "1.5rem",
-              fontWeight: 400,
-              marginLeft: "2rem",
-              letterSpacing: "0.3rem",
-            }}
-          >
-            Roy Kiprop
-          </Typography>
-        )}
 
         <List
           sx={{
@@ -112,10 +91,24 @@ function SideBar() {
           }}
         >
           {menuItems.map((item, index) => (
-            <ListItemButton key={index}>
+            <ListItemButton key={index}
+          
+            >
               <ListItem disablePadding>
-                <ListItemIcon>{item.icon}</ListItemIcon>
-                {isOpen && <ListItemText primary={item.text} />}
+                <ListItemIcon
+                  sx={{
+                    color: "#a7a5b8",
+                  }}
+                  className="text-[#a7a5b8] hover:text-green-500 focus:text-green-500"
+                >
+                  {item.icon}
+                </ListItemIcon>
+                {isOpen && (
+                  <ListItemText
+                    primary={item.text}
+                    className="text-[#a7a5b8] font-bold  hover:text-green-500 focus:text-green-500"
+                  />
+                )}
               </ListItem>
             </ListItemButton>
           ))}

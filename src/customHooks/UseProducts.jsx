@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 
 function UseProducts() {
-  const column = ["id", "name", "sku", "price", "category", "quantity", "size", "brand", "material", "color"]
-   const[Products, setProducts] = useState([])
+  const columns = ["Id", "Name", "SKU", "Price", "Category", ""]
+   const[products, setProducts] = useState([])
    
     useEffect(function (){
         async function fetchProducts(){
@@ -19,7 +19,7 @@ function UseProducts() {
         }
         fetchProducts()
     }, [])
-  return [Products, column]
+  return [columns, products]
 }
 
 export default UseProducts
