@@ -6,7 +6,7 @@ function Checkbox({ checked, onChange }) {
           type="checkbox" 
           checked={checked} 
           onChange={onChange} 
-          className="form-checkbox h-5 w-5 text-green-500"
+          className="form-checkbox h-4 w-4 text-green-500"
         />
       );
     };

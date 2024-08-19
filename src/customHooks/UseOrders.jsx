@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 function UseOrders() {
-  const columns = ["OrderId","Quantity", "ProductName", "Customer", "Status"]
+  const columns = ["Id","Quantity", "ProductName", "Customer", "Status"]
   const[orders, setOrders] = useState([])
    
     useEffect(function (){

@@ -6,9 +6,9 @@ import AppNav from "./Pages/AppNav";
 function App() {
   return (
     <BrowserRouter>
-      <div className="flex space-x-10">
+      <div className="flex space-x-8">
         <SideBar />
-        <div className="w-full">
+        <div className="w-full space-y-8">
           <Header />
           <AppNav />
         </div>
