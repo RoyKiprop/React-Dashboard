@@ -17,6 +17,7 @@ function Table({ columns, data }) {
   const handleSelectAll = (e) => {
     setselectedData(e.target.checked ? data.map((item) => item.id) : []);
   };
+  
 
   const handleSelect = (id) => {
     setselectedData((prevSelectedData) => {

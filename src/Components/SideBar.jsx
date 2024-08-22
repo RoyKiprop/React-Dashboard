@@ -27,7 +27,7 @@ import {
 } from "@mui/icons-material";
 
 const menuItems = [
-  { icon: <Dashboard />, text: "Overview", path: "/overview" },
+  { icon: <Dashboard />, text: "Overview", path: "/" },
   { icon: <Group />, text: "Users", path: "/users" },
   { icon: <Inventory />, text: "Products", path: "/products" },
   { icon: <ShoppingCart />, text: "Orders", path: "/orders" },
@@ -100,7 +100,7 @@ function SideBar() {
           sx={{
             "& > .MuiListItemButton-root": {
               mb: isOpen ? 0.5 : 1.5,
-              paddingLeft: isOpen ? "3rem" : "",
+              paddingLeft: isOpen ? "4rem" : "",
             },
           }}
         >

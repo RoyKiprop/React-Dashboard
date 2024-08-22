@@ -1,122 +1,167 @@
 [
-    {
-      "Id": 1,
-      "UserId": 1,
-      "Customer": "John Doe",
-      "ProductId": 3,
-      "ProductName": "Nike Air Max",
-      "Quantity": 2,
-      "OrderDate": "2024-08-01",
-      "Status": "Delivered"
-    },
-    {
-      "Id": 2,
-      "UserId": 5,
-      "Customer": "Jane Smith",
-      "ProductId": 7,
-      "ProductName": "Adidas Ultraboost",
-      "Quantity": 1,
-      "OrderDate": "2024-08-02",
-      "Status": "Shipped"
-    },
-    {
-      "Id": 3,
-      "UserId": 12,
-      "Customer": "Emily Davis",
-      "ProductId": 1,
-      "ProductName": "Converse Chuck Taylor",
-      "Quantity": 3,
-      "OrderDate": "2024-08-03",
-      "Status": "Processing"
-    },
-    {
-      "Id": 4,
-      "UserId": 2,
-      "Customer": "Michael Johnson",
-      "ProductId": 10,
-      "ProductName": "Puma Suede Classic",
-      "Quantity": 1,
-      "OrderDate": "2024-08-04",
-      "Status": "Cancelled"
-    },
-    {
-      "Id": 5,
-      "UserId": 7,
-      "Customer": "David Wilson",
-      "ProductId": 5,
-      "ProductName": "New Balance 574",
-      "Quantity": 4,
-      "OrderDate": "2024-08-05",
-      "Status": "Delivered"
-    },
-    {
-      "Id": 6,
-      "UserId": 3,
-      "Customer": "Olivia Brown",
-      "ProductId": 9,
-      "ProductName": "Reebok Classic",
-      "Quantity": 2,
-      "OrderDate": "2024-08-06",
-      "Status": "Shipped"
-    },
-    {
-      "Id": 7,
-      "UserId": 8,
-      "Customer": "Daniel Garcia",
-      "ProductId": 2,
-      "ProductName": "Vans Old Skool",
-      "Quantity": 1,
-      "OrderDate": "2024-08-07",
-      "Status": "Processing"
-    },
-    {
-      "Id": 8,
-      "UserId": 4,
-      "Customer": "Sophia Martinez",
-      "ProductId": 6,
-      "ProductName": "Jordan 1 Retro High",
-      "Quantity": 1,
-      "OrderDate": "2024-08-08",
-      "Status": "Delivered"
-    },
-    {
-      "Id": 9,
-      "UserId": 9,
-      "Customer": "Lucas Hernandez",
-      "ProductId": 4,
-      "ProductName": "Asics Gel-Lyte III",
-      "Quantity": 5,
-      "OrderDate": "2024-08-09",
-      "Status": "Processing"
-    },
-    {
-      "Id": 10,
-      "UserId": 10,
-      "Customer": "Lily Thompson",
-      "ProductId": 12,
-      "ProductName": "Saucony Jazz Original",
-      "Quantity": 2,
-      "OrderDate": "2024-08-10",
-      "Status": "Shipped"
-    },
-    {
-      "Id": 11,
-      "UserId": 11,
-      "Customer": "Matthew Lewis",
-      "ProductId": 8,
-      "ProductName": "Fila Disruptor II",
-      "Quantity": 1,
-      "OrderDate": "2024-08-11",
-      "Status": "Delivered"
-    },
-    {
-      "Id": 12,
-      "UserId": 6,
-      "Customer": "Mia Walker",
-      "ProductId": 11,
-      "ProductName": "Under Armour Curry 6",
-      "Quantity": 1,
-      "OrderDate": "2024-08-12",
-      "Status": "Delivered"
-    }
+  {
+    "Id": 1,
+    "UserId": 1,
+    "Customer": "John Doe",
+    "ProductId": 3,
+    "ProductName": "Nike Air Max",
+    "Quantity": 2,
+    "OrderDate": "2024-08-01",
+    "Status": "Delivered",
+    "Discount": 10
+  },
+  {
+    "Id": 2,
+    "UserId": 5,
+    "Customer": "Jane Smith",
+    "ProductId": 7,
+    "ProductName": "Adidas Ultraboost",
+    "Quantity": 1,
+    "OrderDate": "2024-08-02",
+    "Status": "Shipped",
+    "Discount": 5
+  },
+  {
+    "Id": 3,
+    "UserId": 12,
+    "Customer": "Emily Davis",
+    "ProductId": 6,
+    "ProductName": "Converse Chuck Taylor",
+    "Quantity": 3,
+    "OrderDate": "2024-08-03",
+    "Status": "Processing",
+    "Discount": 0
+  },
+  {
+    "Id": 4,
+    "UserId": 2,
+    "Customer": "Michael Johnson",
+    "ProductId": 10,
+    "ProductName": "Puma Suede Classic",
+    "Quantity": 10,
+    "OrderDate": "2024-08-04",
+    "Status": "Cancelled",
+    "Discount": 15
+  },
+  {
+    "Id": 5,
+    "UserId": 7,
+    "Customer": "David Wilson",
+    "ProductId": 5,
+    "ProductName": "New Balance 574",
+    "Quantity": 4,
+    "OrderDate": "2024-08-05",
+    "Status": "Delivered",
+    "Discount": 20
+  },
+  {
+    "Id": 6,
+    "UserId": 3,
+    "Customer": "Olivia Brown",
+    "ProductId": 9,
+    "ProductName": "Reebok Classic",
+    "Quantity": 8,
+    "OrderDate": "2024-08-06",
+    "Status": "Shipped",
+    "Discount": 10
+  },
+  {
+    "Id": 7,
+    "UserId": 8,
+    "Customer": "Daniel Garcia",
+    "ProductId": 2,
+    "ProductName": "Vans Old Skool",
+    "Quantity": 3,
+    "OrderDate": "2024-08-07",
+    "Status": "Processing",
+    "Discount": 0
+  },
+  {
+    "Id": 8,
+    "UserId": 4,
+    "Customer": "Sophia Martinez",
+    "ProductId": 6,
+    "ProductName": "Jordan 1 Retro High",
+    "Quantity": 3,
+    "OrderDate": "2024-08-08",
+    "Status": "Delivered",
+    "Discount": 5
+  },
+  {
+    "Id": 9,
+    "UserId": 9,
+    "Customer": "Lucas Hernandez",
+    "ProductId": 4,
+    "ProductName": "Asics Gel-Lyte III",
+    "Quantity": 8,
+    "OrderDate": "2024-08-09",
+    "Status": "Processing",
+    "Discount": 10
+  },
+  {
+    "Id": 10,
+    "UserId": 10,
+    "Customer": "Lily Thompson",
+    "ProductId": 12,
+    "ProductName": "Saucony Jazz Original",
+    "Quantity": 5,
+    "OrderDate": "2024-08-10",
+    "Status": "Shipped",
+    "Discount": 0
+  },
+  {
+    "Id": 11,
+    "UserId": 11,
+    "Customer": "Matthew Lewis",
+    "ProductId": 8,
+    "ProductName": "Fila Disruptor II",
+    "Quantity": 1,
+    "OrderDate": "2024-08-11",
+    "Status": "Delivered",
+    "Discount": 25
+  },
+  {
+    "Id": 12,
+    "UserId": 6,
+    "Customer": "Mia Walker",
+    "ProductId": 11,
+    "ProductName": "Under Armour Curry 6",
+    "Quantity": 1,
+    "OrderDate": "2024-08-12",
+    "Status": "Delivered",
+    "Discount": 5
+  },
+  {
+    "Id": 13,
+    "UserId": 13,
+    "Customer": "Ava Martinez",
+    "ProductId": 10,
+    "ProductName": "Nike Air Max",
+    "Quantity": 4,
+    "OrderDate": "2024-08-13",
+    "Status": "Delivered",
+    "Discount": 10
+  },
+  {
+    "Id": 14,
+    "UserId": 14,
+    "Customer": "James Lee",
+    "ProductId": 7,
+    "ProductName": "Adidas Ultraboost",
+    "Quantity": 3,
+    "OrderDate": "2024-08-14",
+    "Status": "Shipped",
+    "Discount": 20
+  },
+  {
+    "Id": 15,
+    "UserId": 15,
+    "Customer": "Isabella Gonzalez",
+    "ProductId": 8,
+    "ProductName": "Vans Old Skool",
+    "Quantity": 2,
+    "OrderDate": "2024-08-15",
+    "Status": "Processing",
+    "Discount": 15
+  }
 ]
