@@ -1,28 +1,29 @@
-import { Route, Routes } from "react-router-dom"
-import ProductsPage from "./ProductsPage"
-import UsersPage from "./UsersPage"
-import OrdersPage from "./OrdersPage"
+import { Route, Routes } from "react-router-dom";
+import ProductsPage from "./ProductsPage";
+import UsersPage from "./UsersPage";
+import OrdersPage from "./OrdersPage";
 
-import LineChartPage from "./LineChartPage"
+import LineChartPage from "./LineChartPage";
 
-import BarChartPage from "./BarChartPage"
+import BarChartPage from "./BarChartPage";
 
-import OverviewPage from "./OverviewPage"
-import PieChartPage from "./PieChartPage"
+import OverviewPage from "./OverviewPage";
+import PieChartPage from "./PieChartPage";
+import NewUser from "../Components/UserForm";
 
 function AppNav() {
   return (
     <Routes>
-      <Route index element={<OverviewPage/>}/>
-      <Route path="products" element={<ProductsPage/>}/>
-      <Route path="users" element={<UsersPage/>}/>
-      <Route path="orders" element={<OrdersPage/>}/>
-      <Route path="line-charts" element={<LineChartPage/>}/>
-      <Route path="bar-charts" element={<BarChartPage/>}/>
-      <Route path="pie-charts" element={<PieChartPage/>}/>
-     
+      <Route index element={<OverviewPage />} />
+      <Route path="products" element={<ProductsPage />} />
+      <Route path="users" element={<UsersPage />}/>
+      <Route path="users/new-user" element={<NewUser/>} />
+      <Route path="orders" element={<OrdersPage />} />
+      <Route path="line-charts" element={<LineChartPage />} />
+      <Route path="bar-charts" element={<BarChartPage />} />
+      <Route path="pie-charts" element={<PieChartPage />} />
     </Routes>
-  )
+  );
 }
 
-export default AppNav
+export default AppNav;

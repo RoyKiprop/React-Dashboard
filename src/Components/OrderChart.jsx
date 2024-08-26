@@ -14,28 +14,28 @@ function OrderChart({ orders }) {
         label: 'Quantity Sold',
         data: quantityData,
         borderColor: 'rgba(74, 222, 128, 1)',
-        backgroundColor: 'rgba(74, 222, 128, 0.1)',
+        backgroundColor: 'rgba(74, 222, 128, 0.2)',
         fill: true,
-        tension: 0.4,
+        tension: 0.3,
+        borderWidth: 2,  
       },
       {
-        label: 'Discount Price (%)',
+        label: 'Discount (%)',
         data: discountData,
-        borderColor: 'rgba(255, 0, 0, 0.7)',
-        backgroundColor: 'rgba(255, 0, 0, 0.1)',
+        borderColor: 'rgb(2, 178, 175, 1)',
+        backgroundColor: 'rgb(2, 178, 175, 0.1)',
         fill: true,
-        tension: 0.4,
+        tension: 0.3,
+        borderWidth: 2,
       },
     ],
   };
 
   const options = {
     responsive: true,
-    // maintainAspectRatio: false, 
     plugins: {
       legend: {
         labels: {
-         
           color: 'rgba(148, 144, 167, 1)',
         },
       },
@@ -55,7 +55,7 @@ function OrderChart({ orders }) {
   };
 
   return (
-    <div className="w-full h-[90%] p-6 rounded-lg bg-[#2a263d] mb-5 pointer-cursor">
+    <div className="w-full h-[90%] p-6 rounded-lg bg-[#2a263d] mb-5 cursor-pointer">
       <h2 className="text-green-300 text-center mb-2">Order Quantity and Discounts Over Time</h2>
       <Line data={data} options={options} />
     </div>

@@ -10,8 +10,8 @@ function PieChartPage() {
   return (
     <div className="space-y-8 h-[80%]">
       <div className="flex space-x-1 items-center">
-        <h1 className="text-2xl text-white font-bold">PIE CHART</h1>
-        <PieChartIcon className="text-white" />
+        <h1 className="text-2xl text-green-300 font-bold">PIE CHART</h1>
+        <PieChartIcon className="text-green-300" />
       </div>
 
       <div className="bg-[#2a263d]  h-full p-6 rounded-xl  mr-6">

@@ -12,7 +12,7 @@ function BarChart({ orders }) {
         data: orders.map((order) => order.Quantity),
         backgroundColor: "rgba(34, 197, 94, 1)",
         borderColor: "rgba(34, 197, 94, 1)",
-        barThickness: 15, 
+        barThickness: 30, 
       },
     ],
   };
@@ -45,25 +45,25 @@ function BarChart({ orders }) {
         ticks: {
           color: 'rgba(148, 144, 167, 1)', 
         },
-        // grid: {
-        //   display: true, 
-        //   color: 'rgba(200, 200, 200, 0.3)', 
-        // },
+        grid: {
+          display: true, 
+          color: 'rgba(200, 200, 200, 0.3)', 
+        },
       },
       y: {
         ticks: {
           color: 'rgba(148, 144, 167, 1)',
         },
-        // grid: {
-        //   display: true,
-        //   color: 'rgba(200, 200, 200, 0.3)', 
-        // },
+        grid: {
+          display: true,
+          color: 'rgba(200, 200, 200, 0.3)', 
+        },
       },
     },
   };
 
   return (
-    <div className="w-full h-[90%] p-6 rounded-lg bg-[#2a263d] pointer-cursor">
+    <div className="w-full h-[90%] p-6 rounded-lg bg-[#2a263d] cursor-pointer">
       <h2 className="text-green-300 text-center mb-2">Quantity ordered per Product</h2>
       <Bar data={data} options={option} />
   

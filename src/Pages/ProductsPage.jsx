@@ -9,8 +9,8 @@ function ProductsPage() {
   return (
     <div className="space-y-8">
       <div className="flex space-x-2 items-center">
-        <h1 className="text-2xl text-white font-bold">PRODUCTS</h1>
-        <Inventory className="text-white" />
+        <h1 className="text-2xl text-green-300 font-bold">PRODUCTS</h1>
+        <Inventory className="text-green-300" />
       </div>
 
       <div className="bg-[#2a263d] space-y-5  px-20 py-8 rounded-xl  mr-6">

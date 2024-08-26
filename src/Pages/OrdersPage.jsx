@@ -8,8 +8,8 @@ function OrdersPage() {
   return (
     <div className="space-y-8">
       <div className="flex space-x-1 items-center">
-        <h1 className="text-2xl text-white font-bold">ORDERS</h1>
-        <ShoppingCart className="text-white" />
+        <h1 className="text-2xl text-green-300 font-bold">ORDERS</h1>
+        <ShoppingCart className="text-green-300" />
       </div>
 
       <div className="bg-[#2a263d] space-y-5  px-20 py-8 rounded-xl  mr-6">

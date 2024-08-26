@@ -10,8 +10,8 @@ function BarChartPage() {
   return (
     <div className="space-y-8 h-[80%]">
       <div className="flex space-x-1 items-center">
-        <h1 className="text-2xl text-white font-bold">BAR CHART</h1>
-        <BarChartRounded className="text-white" />
+        <h1 className="text-2xl text-green-300 font-bold">BAR CHART</h1>
+        <BarChartRounded className="text-green-300" />
       </div>
       <div className="bg-[#2a263d] p-6 rounded-xl mr-6 h-full">
         <BarChart orders={orders} />  
