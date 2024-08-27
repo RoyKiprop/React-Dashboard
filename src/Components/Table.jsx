@@ -8,17 +8,23 @@ import {
 
 import Button from "./Button";
 import Checkbox from "./Checkbox";
+import { UseSelected } from "./context/SelectedTableItem";
+import { Link } from "react-router-dom";
 
 function Table({ columns, data }) {
   const [selectedData, setselectedData] = useState([]);
   const [Page, setPage] = useState(1);
   const [itemsPerPage] = useState(5);
 
+  const {setId} = UseSelected()
+
   const handleSelectAll = (e) => {
     setselectedData(e.target.checked ? data.map((item) => item.id) : []);
   };
+  const handleSelectId = (item) => {
+    setId(item.Id)
+  }
   
-
   const handleSelect = (id) => {
     setselectedData((prevSelectedData) => {
       if (prevSelectedData.includes(id)) {
@@ -80,7 +86,7 @@ function Table({ columns, data }) {
               </td>
             ))}
             <td className="py-2 px-4  flex space-x-6">
-              <Button>View</Button>
+              <Link to={`/products/${item.Name}`}><Button onclick={() => handleSelectId(item)}>View</Button></Link>
               <Button>Edit</Button>
             </td>
           </tr>
