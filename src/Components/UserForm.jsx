@@ -98,7 +98,7 @@ const NewUser = () => {
                 <MyTextInput
                   label="Phone"
                   name="phone"
-                  type="text"
+                  type="tel"
                   placeholder="+25471111111"
                 />
               </div>

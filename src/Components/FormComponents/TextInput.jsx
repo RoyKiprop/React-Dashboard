@@ -6,15 +6,17 @@ const MyTextInput = ({ label, ...props }) => {
   const inputStyle = {
     padding: '0.45rem',
     color: '#9490a7',
-    border: '1px solid #e5e7eb', 
+    border: '1px solid #4b5563', 
     borderRadius: '0.375rem',
     outline: 'none',
+    backgroundColor: '#2a263d', 
   };
   return (
     <div className="w-full">
       <div className="flex flex-col">
         <label htmlFor={props.id || props.name} className="mb-1 text-sm font-medium">
           {label}
+          
         </label>
         <input
           style={inputStyle}

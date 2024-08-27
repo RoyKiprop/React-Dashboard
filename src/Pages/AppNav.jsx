@@ -10,12 +10,14 @@ import BarChartPage from "./BarChartPage";
 import OverviewPage from "./OverviewPage";
 import PieChartPage from "./PieChartPage";
 import NewUser from "../Components/UserForm";
+import NewProduct from "../Components/ProductForm";
 
 function AppNav() {
   return (
     <Routes>
       <Route index element={<OverviewPage />} />
       <Route path="products" element={<ProductsPage />} />
+      <Route path="products/add-product" element={<NewProduct/>} />
       <Route path="users" element={<UsersPage />}/>
       <Route path="users/new-user" element={<NewUser/>} />
       <Route path="orders" element={<OrdersPage />} />
