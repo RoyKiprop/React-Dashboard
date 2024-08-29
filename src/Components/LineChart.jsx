@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Line } from 'react-chartjs-2';
-import 'chart.js/auto'; 
+import 'chart.js/auto';
 
-function OrderChart({ orders }) {
+function LineChart({ orders }) {
   const xAxisData = orders?.map((order) => new Date(order.OrderDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
   const quantityData = orders?.map((order) => order.Quantity);
   const discountData = orders?.map((order) => order.Discount);
@@ -33,6 +33,7 @@ function OrderChart({ orders }) {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         labels: {
@@ -55,11 +56,13 @@ function OrderChart({ orders }) {
   };
 
   return (
-    <div className="w-full h-[90%] p-6 rounded-lg bg-[#2a263d] mb-5 cursor-pointer">
+    <div className="w-full h-[87%] p-6 rounded-lg bg-[#2a263d] mb-5 cursor-pointer">
       <h2 className="text-green-300 text-center mb-2">Order Quantity and Discounts Over Time</h2>
-      <Line data={data} options={options} />
+      <div className="w-full h-full">
+        <Line data={data} options={options} />
+      </div>
     </div>
   );
 }
 
-export default OrderChart;
+export default LineChart;

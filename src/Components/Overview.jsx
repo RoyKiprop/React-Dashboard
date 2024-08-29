@@ -1,19 +1,23 @@
 import BarChart from "./BarCharts";
-import OrderChart from "./OrderChart";
+import OrderChart from "./LineChart";
 import PieChart from "./PieChart";
 import UseOrders from "../customHooks/UseOrders";
 import UseProducts from "../customHooks/UseProducts";
-import SalesCard from "./salesCard";
+import SalesCard from "./SalesCard";
 import ProductsCard from "./ProductsCard";
 import UsersCard from "./UsersCard";
 import { Dashboard } from "@mui/icons-material";
 
+import UseTransaction from "../customHooks/UseTransaction";
+import Table from "./Table";
+import TransactionCard from "./TransactionCard";
 
 
 
 function Overview() {
   const [, orders] = UseOrders();
   const [, data] = UseProducts();
+  const [columns, transactions] = UseTransaction();
   return (
     <div>
       <div className="flex space-x-1 text-green-300 items-center mb-4 ">
@@ -21,8 +25,9 @@ function Overview() {
         <Dashboard />
       </div>
 
-      <div className="flex space-x-4 mb-4 mr-5">
+      <div className="flex justify-between text-lg space-x-4 mb-4 mr-5">
         <SalesCard />
+        <TransactionCard/>
         <ProductsCard />
         <UsersCard />
       </div>
@@ -30,6 +35,7 @@ function Overview() {
         <OrderChart orders={orders} />
         <BarChart orders={orders} />
         <PieChart data={data} />
+        <Table columns={columns} data={transactions} />
       </div>
       
     </div>

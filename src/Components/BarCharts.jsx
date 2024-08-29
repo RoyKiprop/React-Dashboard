@@ -63,7 +63,7 @@ function BarChart({ orders }) {
   };
 
   return (
-    <div className="w-full h-[90%] p-6 rounded-lg bg-[#2a263d] cursor-pointer">
+    <div className="w-full h-[87%] p-6 rounded-lg bg-[#2a263d] cursor-pointer">
       <h2 className="text-green-300 text-center mb-2">Quantity ordered per Product</h2>
       <Bar data={data} options={option} />
   

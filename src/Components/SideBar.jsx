@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import ReceiptIcon from '@mui/icons-material/Receipt';
 import {
   Drawer,
   List,
@@ -31,6 +32,7 @@ const menuItems = [
   { icon: <Group />, text: "Users", path: "/users" },
   { icon: <Inventory />, text: "Products", path: "/products" },
   { icon: <ShoppingCart />, text: "Orders", path: "/orders" },
+  { icon: <ReceiptIcon />, text: "Transactions", path: "/transactions" },
   { icon: <CalendarMonth />, text: "Schedule", path: "/schedule" },
   { icon: <StackedLineChart />, text: "Line Charts", path: "/line-charts" },
   { icon: <PieChart />, text: "Pie Charts", path: "/pie-charts" },

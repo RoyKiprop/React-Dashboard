@@ -1,12 +1,9 @@
 /* eslint-disable react/prop-types */
 
-function Card({ children, variant, onClick, className }) {
-  const classVariation = {
-    filter: "bg-gray-100 p-5 rounded-lg",
-    products: "bg-white rounded-lg overflow-hidden",
-  };
+function Card({ children,  onClick, className }) {
+;
 
-  const classes = `${classVariation[variant]} ${className}`;
+  const classes = `${className}`;
 
   return (
     <div className={classes} onClick={onClick}>

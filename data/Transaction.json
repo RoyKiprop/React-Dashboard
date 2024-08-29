@@ -1,0 +1,134 @@
+[
+    {
+      "Id": 1,
+      "TransactionId": "T001",
+      "UserId": "U001",
+      "Amount": 12000,
+      "Currency": "KES",
+      "Date": "2024-08-01",
+      "Status": "Completed",
+      "PaymentMethod": "MasterCard",
+      "Description": "Payment for Air Max sneakers"
+    },
+    {
+      "Id": 2,
+      "TransactionId": "T002",
+      "UserId": "U002",
+      "Amount": 9500,
+      "Currency": "KES",
+      "Date": "2024-08-02",
+      "Status": "Pending",
+      "PaymentMethod": "Visa",
+      "Description": "Purchase of Yeezy sneakers"
+    },
+    {
+      "Id": 3,
+      "TransactionId": "T003",
+      "UserId": "U003",
+      "Amount": 8000,
+      "Currency": "KES",
+      "Date": "2024-08-03",
+      "Status": "Failed",
+      "PaymentMethod": "PayPal",
+      "Description": "Purchase of Jordan 1 sneakers"
+    },
+    {
+      "Id": 4,
+      "TransactionId": "T004",
+      "UserId": "U004",
+      "Amount": 10500,
+      "Currency": "KES",
+      "Date": "2024-08-04",
+      "Status": "Completed",
+      "PaymentMethod": "MasterCard",
+      "Description": "Payment for Nike Blazer sneakers"
+    },
+    {
+      "Id": 5,
+      "TransactionId": "T005",
+      "UserId": "U005",
+      "Amount": 5500,
+      "Currency": "KES",
+      "Date": "2024-08-05",
+      "Status": "Completed",
+      "PaymentMethod": "Visa",
+      "Description": "Purchase of Puma sneakers"
+    },
+    {
+      "Id": 6,
+      "TransactionId": "T006",
+      "UserId": "U006",
+      "Amount": 13500,
+      "Currency": "KES",
+      "Date": "2024-08-06",
+      "Status": "Completed",
+      "PaymentMethod": "Credit Card",
+      "Description": "Payment for Adidas Ultra Boost sneakers"
+    },
+    {
+      "Id": 7,
+      "TransactionId": "T007",
+      "UserId": "U007",
+      "Amount": 7500,
+      "Currency": "KES",
+      "Date": "2024-08-07",
+      "Status": "Pending",
+      "PaymentMethod": "PayPal",
+      "Description": "Purchase of Converse Chuck Taylor sneakers"
+    },
+    {
+      "Id": 8,
+      "TransactionId": "T008",
+      "UserId": "U008",
+      "Amount": 7000,
+      "Currency": "KES",
+      "Date": "2024-08-08",
+      "Status": "Completed",
+      "PaymentMethod": "Debit Card",
+      "Description": "Payment for Reebok sneakers"
+    },
+    {
+      "Id": 9,
+      "TransactionId": "T009",
+      "UserId": "U009",
+      "Amount": 15000,
+      "Currency": "KES",
+      "Date": "2024-08-09",
+      "Status": "Refunded",
+      "PaymentMethod": "MasterCard",
+      "Description": "Refund for returned Nike Air Force sneakers"
+    },
+    {
+      "Id": 10,
+      "TransactionId": "T010",
+      "UserId": "U010",
+      "Amount": 13000,
+      "Currency": "KES",
+      "Date": "2024-08-10",
+      "Status": "Completed",
+      "PaymentMethod": "Visa",
+      "Description": "Purchase of New Balance sneakers"
+    },
+    {
+      "Id": 11,
+      "TransactionId": "T011",
+      "UserId": "U011",
+      "Amount": 6000,
+      "Currency": "KES",
+      "Date": "2024-08-11",
+      "Status": "Failed",
+      "PaymentMethod": "Credit Card",
+      "Description": "Purchase of Vans sneakers"
+    },
+    {
+      "Id": 12,
+      "TransactionId": "T012",
+      "UserId": "U012",
+      "Amount": 10000,
+      "Currency": "KES",
+      "Date": "2024-08-12",
+      "Status": "Completed",
+      "PaymentMethod": "PayPal",
+      "Description": "Payment for Asics sneakers"
+    }
+]

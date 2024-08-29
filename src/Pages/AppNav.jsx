@@ -13,6 +13,7 @@ import NewUser from "../Components/UserForm";
 import NewProduct from "../Components/ProductForm";
 import { SelectedProvider } from "../Components/context/SelectedTableItem";
 import ProductView from "../Components/ProductView";
+import TransactionPage from "./TransactionPage";
 
 function AppNav() {
   return (
@@ -25,6 +26,7 @@ function AppNav() {
         <Route path="users" element={<UsersPage />} />
         <Route path="users/new-user" element={<NewUser />} />
         <Route path="orders" element={<OrdersPage />} />
+        <Route path="transactions" element={<TransactionPage />} />
         <Route path="line-charts" element={<LineChartPage />} />
         <Route path="bar-charts" element={<BarChartPage />} />
         <Route path="pie-charts" element={<PieChartPage />} />

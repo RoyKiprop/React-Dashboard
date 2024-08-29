@@ -41,9 +41,8 @@ function ProductsPage() {
         <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {currentPageItems.map((product) => (
             <Card
-              variant="products"
               key={product.Id}
-              className="flex flex-col h-full bg-[#221f34]"
+              className="flex flex-col h-full bg-[#221f34] rounded-lg overflow-hidden"
             >
               <img
                 src={product.imageUrl}

@@ -9,7 +9,7 @@ import {
 import Button from "./Button";
 import Checkbox from "./Checkbox";
 import { UseSelected } from "./context/SelectedTableItem";
-import { Link } from "react-router-dom";
+
 
 function Table({ columns, data }) {
   const [selectedData, setselectedData] = useState([]);
@@ -86,8 +86,8 @@ function Table({ columns, data }) {
               </td>
             ))}
             <td className="py-2 px-4  flex space-x-6">
-              <Link to={`/products/${item.Name}`}><Button onclick={() => handleSelectId(item)}>View</Button></Link>
-              <Button>Edit</Button>
+              <Button onclick={() => handleSelectId(item)}>View</Button>
+              
             </td>
           </tr>
         ))}

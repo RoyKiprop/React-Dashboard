@@ -1,7 +1,7 @@
 
 import { StackedLineChart } from '@mui/icons-material';
 import UseOrders from '../customHooks/UseOrders';
-import OrderChart from '../Components/OrderChart';
+import LineChart from '../Components/LineChart';
 
 
 function LineChartPage() {
@@ -14,7 +14,7 @@ function LineChartPage() {
         <StackedLineChart className="text-green-300" />
       </div>
       <div className="bg-[#2a263d] p-6 rounded-xl mr-6 h-full">
-        <OrderChart orders={orders} />  
+        <LineChart orders={orders} />  
       </div>
     </div>
   );

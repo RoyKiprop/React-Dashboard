@@ -1,8 +1,9 @@
 import Search from "./Search"
-import { Avatar } from "@mui/material";
+
 import { DarkMode, Settings} from '@mui/icons-material';
-import Notification from "./notification";
-import Profile_Pic from '../assets/Profile_Pic.jpg'
+import Notification from "./NotificationMenu";
+
+import ProfileMenu from "./ProfileMenu";
 
 function Header() {
   return (
@@ -12,11 +13,7 @@ function Header() {
             <DarkMode className="text-[#a7a5b8]"/>
             <Settings className="text-[#a7a5b8]"/>
             <Notification/>
-            <Avatar
-            alt="Profile Picture"
-            src={Profile_Pic}
-            sx={{}}
-          />
+            <ProfileMenu/>
 
         </div>
 
