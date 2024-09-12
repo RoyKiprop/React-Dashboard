@@ -49,7 +49,7 @@ const DoughnutChart = ({ data }) => {
 
   return (
     <div className="w-full h-[87%] pb-10 pt-4 bg-[#2a263d] rounded-xl cursor-pointer">
-      <h2 className='text-green-300 text-center mb-4'>Product Quantities</h2>
+      <h2 className='text-green-300 text-center mb-2'>Product Quantities</h2>
       <Doughnut data={chartData} options={options} /> 
     </div>
   );

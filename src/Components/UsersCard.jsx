@@ -1,5 +1,5 @@
 import Card from "./Card";
-import { Group } from "@mui/icons-material";
+
 import UseUsers from "../customHooks/Useusers";
 import analyticsImage from "../assets/analyticsImage.png";
 
@@ -7,9 +7,9 @@ function UsersCard() {
   const [, users] = UseUsers();
   return (
     <Card className="flex justify-between items-center w-full bg-[#2a263d] rounded-lg text-[#9490a7] p-3">
-      <div className="flex flex-col space-y-1">
-        <Group />
-        <h2>USERS</h2>
+      <div className="flex flex-col space-y-2">
+       
+        <h2>Users</h2>
         <p className="text-white">{users.length}</p>
       </div>
       <div className="relative inline-block">

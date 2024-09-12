@@ -5,12 +5,13 @@ import Button from "../Components/Button";
 import { MdEdit, MdDelete } from "react-icons/md";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import { UseSelected } from "../Components/context/SelectedTableItem";
+import { UseSelected } from "../Components/context/SelectedTableItem";
 
 function ProductsPage() {
   const [, products] = UseProducts();
   const [Page, setPage] = useState(1);
   const [itemsPerPage] = useState(4);
+  const { setId } = UseSelected();
   const lastItemPos = Page * itemsPerPage;
   const firstItemPos = lastItemPos - itemsPerPage;
 
@@ -33,7 +34,7 @@ function ProductsPage() {
       </div>
       <div className="bg-[#2a263d] rounded-xl mr-6 p-8 space-y-8">
         <div className="flex justify-between">
-          <h4 className="text-lg text-green-300">Manage Products Inventory</h4>
+          <h4 className="text-md text-green-300">Manage Products Inventory</h4>
           <Link to={"/products/add-product"}>
             <Button> New Product</Button>
           </Link>
@@ -50,15 +51,22 @@ function ProductsPage() {
                 className="h-48 w-full object-cover rounded-t-lg"
               />
               <div className="p-4 flex flex-col flex-grow">
-                <p className="text-xl  text-[#a7a5b8] mb-2 truncate">{product.Name}</p>
+                <p className="text-xl  text-[#a7a5b8] mb-2 truncate">
+                  {product.Name}
+                </p>
                 <p className="font-semibold text-[#a7a5b8] mb-2">
                   {product.Price}
                 </p>
                 <div className="flex space-x-3">
-                  <button className="flex items-center space-x-3 py-1 px-5 border rounded-lg border-gray-400 text-[#a7a5b8] ">
-                    <MdEdit />
-                    Edit
-                  </button>
+                  <Link to={`/products/${product.Name}`}>
+                    <button
+                      onClick={() => setId(product.Id)}
+                      className="flex items-center space-x-3 py-1 px-5 border rounded-lg border-gray-400 text-[#a7a5b8] "
+                    >
+                      <MdEdit />
+                      Edit
+                    </button>
+                  </Link>
                   <button className="flex items-center space-x-3 py-1 px-5  border rounded-lg border-gray-400 text-green-500">
                     <MdDelete />
                     Delete

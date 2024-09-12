@@ -7,39 +7,36 @@ import SalesCard from "./SalesCard";
 import ProductsCard from "./ProductsCard";
 import UsersCard from "./UsersCard";
 import { Dashboard } from "@mui/icons-material";
-
-import UseTransaction from "../customHooks/UseTransaction";
-import Table from "./Table";
 import TransactionCard from "./TransactionCard";
-
-
+import MapComponent from "../Components/map";  // Import the MapComponent
 
 function Overview() {
   const [, orders] = UseOrders();
   const [, data] = UseProducts();
-  const [columns, transactions] = UseTransaction();
+  
   return (
     <div>
-      <div className="flex space-x-1 text-green-300 items-center mb-4 ">
-        <h1 className="text-2xl font-bold ">OVERVIEW</h1>
+      <div className="flex space-x-1 text-green-300 items-center mb-4">
+        <h1 className="text-2xl font-bold">OVERVIEW</h1>
         <Dashboard />
       </div>
 
-      <div className="flex justify-between text-lg space-x-4 mb-4 mr-5">
-        <SalesCard />
-        <TransactionCard/>
+      <div className="flex flex-col lg:flex-row justify-between text-lg gap-4 mb-5 mr-5">
         <ProductsCard />
+        <SalesCard />
         <UsersCard />
+        <TransactionCard />
       </div>
-      <div className="grid  grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-4 mr-5">
-        <OrderChart orders={orders} />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-6 mr-5">
         <BarChart orders={orders} />
+        <OrderChart orders={orders} />
         <PieChart data={data} />
-        <Table columns={columns} data={transactions} />
+        <div className="h-[50vh] lg:h-[40vh] xl:h-[70vh]"> 
+          <MapComponent />
+        </div>
       </div>
-      
     </div>
-    
   );
 }
 

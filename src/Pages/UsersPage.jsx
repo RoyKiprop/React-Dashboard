@@ -6,8 +6,10 @@ import { useState } from "react";
 import Card from "../Components/Card";
 import { Avatar } from "@mui/material";
 import Profile_Pic from "../assets/Profile_Pic.jpg";
+import { UseSelected } from "../Components/context/SelectedTableItem";
 
 function UsersPage() {
+  const { setId } = UseSelected();
   const [, users] = UseUsers();
   const [Page, setPage] = useState(1);
   const [itemsPerPage] = useState(4);
@@ -28,12 +30,12 @@ function UsersPage() {
   return (
     <div className="space-y-8">
       <div className="flex space-x-2 items-center">
-        <Group className="text-green-300"/>
+        <Group className="text-green-300" />
         <h1 className="text-2xl text-green-300 font-bold">USERS</h1>
       </div>
       <div className="bg-[#2a263d] rounded-xl mr-6 p-8 space-y-8">
         <div className="flex justify-between">
-          <h4 className="text-lg text-green-300">Manage Users</h4>
+          <h4 className="text-md text-green-300">Manage Users</h4>
           <Link to={"/users/new-user"}>
             <Button> New User</Button>
           </Link>
@@ -63,9 +65,14 @@ function UsersPage() {
                   <p className="text-lg font-semibold text-[#a7a5b8] capitalize">
                     {user.Role}
                   </p>
-                  <button className=" py-2 px-6 bg-green-900 text-gray-300 font-medium rounded-lg ">
-                    View Profile
-                  </button>
+                  <Link to={`/users/${user.Id}`}>
+                    <button
+                      onClick={() => setId(user.Id)}
+                      className=" py-2 px-6 bg-green-900 text-gray-300 font-medium rounded-lg "
+                    >
+                      View Profile
+                    </button>
+                  </Link>
                 </div>
               </div>
             </Card>

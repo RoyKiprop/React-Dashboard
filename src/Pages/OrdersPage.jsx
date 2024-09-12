@@ -12,9 +12,9 @@ function OrdersPage() {
         <ShoppingCart className="text-green-300" />
       </div>
 
-      <div className="bg-[#2a263d] space-y-5  px-20 py-8 rounded-xl  mr-6">
-        <h4 className="text-lg text-green-300">Manage Orders Made</h4>
-        <Table columns={columns} data={orders} />
+      <div className="bg-[#2a263d] space-y-5 p-8 rounded-xl  mr-6 ">
+        <h4 className="text-md text-green-300">Manage Orders Made</h4>
+        <Table path={"orders"} columns={columns} data={orders} />
       </div>
     </div>
   );

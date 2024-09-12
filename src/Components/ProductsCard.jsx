@@ -1,5 +1,5 @@
 import Card from "./Card";
-import { Inventory } from "@mui/icons-material";
+
 import UseProducts from "../customHooks/UseProducts";
 import analyticsImage from "../assets/analyticsImage.png";
 
@@ -8,9 +8,9 @@ function ProductsCard() {
   return (
     <>
       <Card className="flex justify-between items-center w-full bg-[#2a263d] rounded-lg text-[#9490a7] p-3">
-        <div className="flex flex-col space-y-1">
-          <Inventory />
-          <h2>PRODUCTS</h2>
+        <div className="flex flex-col space-y-2">
+         
+          <h2>Products</h2>
           <p className="text-white">{products.length}</p>
         </div>
         <div className="relative inline-block">

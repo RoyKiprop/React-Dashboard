@@ -5,27 +5,31 @@ import MyTextInput from "./FormComponents/TextInput";
 import MySelect from "./FormComponents/Select";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 
-const NewUser = () => {
+const NewUser = ({ user = null, onSubmit }) => {
+  const isEditMode = !user;
+
   return (
     <div className="space-y-4">
       <div className="flex space-x-2 items-center text-green-300">
         <PersonAddIcon />
-        <h2 className="text-2xl text-green-300 font-bold"> NEW PROFILE</h2>
+        <h2 className="text-2xl text-green-300 font-bold">
+          {isEditMode ? "EDIT PROFILE" : "NEW PROFILE"}
+        </h2>
       </div>
 
-      <div className=" bg-[#2a263d] p-6 rounded-lg mr-6 text-[#9490a7]">
+      <div className="bg-[#2a263d] p-6 rounded-lg mr-6 text-[#9490a7]">
         <Formik
           initialValues={{
-            firstName: "",
-            lastName: "",
-            email: "",
-            age: "",
-            phone: "",
-            city: "",
-            street: "",
-            state: "",
-            zip: "",
-            roleType: "",
+            firstName: user?.Name.split(" ")[0] || "",
+            lastName: user?.Name.split(" ")[1] || "",
+            email: user?.Email || "",
+            age: user?.Age || "",
+            phone: user?.Phone || "",
+            city: user?.city || "",
+            street: user?.street || "",
+            state: user?.state || "",
+            zip: user?.zip || "",
+            roleType: user?.Role || "",
           }}
           validationSchema={Yup.object({
             firstName: Yup.string()
@@ -37,54 +41,40 @@ const NewUser = () => {
             email: Yup.string()
               .email("Invalid email address")
               .required("Email is required"),
-            age: Yup.string()
-              .email("Invalid email address")
+            age: Yup.number()
+              .min(1, "Age must be greater than 0")
               .required("Age is required"),
-            phone: Yup.string()
-              .email("Invalid email address")
-              .required("Phone is required"),
-            state: Yup.string()
-              .email("Invalid email address")
-              .required("State is required"),
-            city: Yup.string()
-              .email("Invalid email address")
-              .required("City is required"),
-            street: Yup.string()
-              .email("Invalid email address")
-              .required("street is required"),
-            zip: Yup.string()
-              .email("Invalid email address")
-              .required("Zip is required"),
-            acceptedTerms: Yup.boolean()
-              .required("This field is required")
-              .oneOf([true], "You must accept the terms and conditions."),
+            phone: Yup.string().required("Phone is required"),
+            state: Yup.string().required("State is required"),
+            city: Yup.string().required("City is required"),
+            street: Yup.string().required("Street is required"),
+            zip: Yup.string().required("Zip is required"),
             roleType: Yup.string()
               .oneOf(["user", "admin"], "Invalid Role Type")
               .required("Role is required"),
           })}
           onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
+            onSubmit(values);
+            setSubmitting(false);
           }}
         >
           <Form>
-            <h2 className="tetx-2xl text-green-300 mb-4">Create New User</h2>
-            <div className="flex flex-col space-y-3 ">
-              <div className="flex space-x-20 ">
+            <h2 className="text-md text-green-300 mb-4">
+              {isEditMode ? "Edit User" : "Create New User"}
+            </h2>
+            <div className="flex flex-col space-y-3">
+              <div className="flex space-x-20">
                 <MyTextInput
                   label="First Name"
                   name="firstName"
                   type="text"
-                  placeholder="Jane"
+                  placeholder="Enter first name"
                 />
-
                 <MyTextInput
                   label="Last Name"
                   name="lastName"
                   type="text"
-                  placeholder="Doe"
+                  placeholder="Enter last name"
                 />
               </div>
               <div className="flex space-x-20">
@@ -92,14 +82,13 @@ const NewUser = () => {
                   label="Email Address"
                   name="email"
                   type="email"
-                  placeholder="janedoe@gmail.com"
+                  placeholder="Enter email"
                 />
-
                 <MyTextInput
                   label="Phone"
                   name="phone"
                   type="tel"
-                  placeholder="+25471111111"
+                  placeholder="Enter phone"
                 />
               </div>
               <div className="flex space-x-20">
@@ -107,14 +96,13 @@ const NewUser = () => {
                   label="Age"
                   name="age"
                   type="number"
-                  placeholder="20"
+                  placeholder="Enter age"
                 />
-
                 <MyTextInput
                   label="State"
                   name="state"
                   type="text"
-                  placeholder="Nairobi"
+                  placeholder="Enter state"
                 />
               </div>
               <div className="flex space-x-20">
@@ -122,14 +110,13 @@ const NewUser = () => {
                   label="City"
                   name="city"
                   type="text"
-                  placeholder="Nairobi"
+                  placeholder="Enter city"
                 />
-
                 <MyTextInput
                   label="Zip"
                   name="zip"
                   type="text"
-                  placeholder="00100"
+                  placeholder="Give zip code"
                 />
               </div>
               <div className="flex space-x-20">
@@ -137,9 +124,8 @@ const NewUser = () => {
                   label="Street"
                   name="street"
                   type="text"
-                  placeholder="909 Cypress St"
+                  placeholder="Enter street address"
                 />
-
                 <MySelect label="Role" name="roleType">
                   <option value="">Select role</option>
                   <option value="admin">Admin</option>
@@ -150,9 +136,9 @@ const NewUser = () => {
             <div className="mt-8 flex justify-center">
               <button
                 type="submit"
-                className=" bg-green-500 text-white py-2 px-6 rounded-md hover:bg-green-300 focus:bg-green-300 "
+                className="bg-green-500 text-white py-2 px-6 rounded-md hover:bg-green-300 focus:bg-green-300"
               >
-                Submit
+                {isEditMode ? "Update" : "Submit"}
               </button>
             </div>
           </Form>
